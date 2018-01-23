@@ -39,7 +39,7 @@ router.get('/read', (req, res, next) => {
 
 // no need for shout update. but CRD also sounds nice. 
 
-// delete shout
+// delete ONE shout
 router.delete('/:id', (req, res, next) => {
     const id = req.params.id;
     Shout.remove({ _id: id })

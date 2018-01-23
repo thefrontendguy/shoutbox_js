@@ -21,7 +21,7 @@ const app = express();
 
 // enable cors for my react localhost
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://192.168.43.74:3005");
+    res.header("Access-Control-Allow-Origin", "http://localhost:3005");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     next();
