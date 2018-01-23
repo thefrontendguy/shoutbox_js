@@ -1,0 +1,112 @@
+@mixin lin($color1, $color2, $fontsize, $fontweight) {
+    background: linear-gradient(lighten($color1,5%) 50%, $color1 55%);
+    color: $color2;
+    text-shadow: -1px 0px 4px darken($color1,5%);
+    font-size: $fontsize;
+    font-weight: $fontweight;
+}
+@mixin font {
+    font-family: 'Roboto', sans-serif; 
+}
+@mixin border {
+    border: 1px solid #ccc;
+}
+@mixin borderRadius {
+    border-radius: 8px;
+}
+@mixin boxShadow {
+    box-shadow: 0px 2px 11px -1px rgb(175, 73, 156);
+}
+body {
+    background: rgb(211, 97, 188);
+    margin: 0;
+    padding: 0;
+}
+#shoutbox {
+    display: flex;
+    justify-content: center;
+    & .container {
+        flex: 1;
+        @include borderRadius;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+        max-width: 460px;
+        background: rgba(255,255,255,0.75);
+        @include boxShadow;
+        @include font;   
+        @include border;
+    }
+    & .header {
+        @include lin(rgb(211, 97, 188), white, 24px, 700);
+        @include boxShadow;
+        //animation: 1s headerdance infinite;
+    }
+    @keyframes headerdance {
+        from { transform: rotate(0deg) scale(1) }
+        20% { transform: rotate(0deg) scale(.97) }
+        80% { transform: rotate(0deg) scale(1) }
+        to { transform: rotate(0deg) scale(1) }
+    }
+    & .header,
+    & .shout {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        @include border;
+        @include borderRadius;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+    & .shout {
+        padding: 4px 10px 4px;
+        flex-direction: column;
+        align-items: center;
+        @include lin(rgb(231, 231, 231), #3A3838, 16px, 700);
+        @include boxShadow;
+        & .date,
+        & .user {
+            font-size: 70%;
+            opacity: .45;
+            font-weight: 400;
+            text-align: center;
+        }
+        & .text {
+            margin: 7px 0;
+        }
+    }
+    & .input,
+    & .btn-send {
+        margin-top: 18px;
+        text-align: center;
+        font-size: 18px;
+        width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
+        @include border;
+        @include borderRadius;
+        transition: .1s all linear;
+        &:focus {
+            outline: none;
+        }
+    }
+    & .btn-send {
+        margin-top: 6px;
+        @include lin(rgb(89, 8, 114), #FFFFFF, 14px, 700);
+        cursor: pointer;
+        transition: .15s all linear;
+        &:hover:not(:disabled) {
+            @include lin(darken(rgb(89, 8, 114), 5%), #FFFFFF, 14px, 700);
+        }
+        &:disabled {
+            background: #9a9898;
+            color: #d2d2d2;
+            text-shadow: none;
+            cursor: initial;
+        }
+    }
+}

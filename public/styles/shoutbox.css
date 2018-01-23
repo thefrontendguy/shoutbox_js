@@ -1,0 +1,101 @@
+body {
+  background: #d361bc;
+  margin: 0;
+  padding: 0; }
+
+#shoutbox {
+  display: flex;
+  justify-content: center; }
+  #shoutbox .container {
+    flex: 1;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 460px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 2px 11px -1px #af499c;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #ccc; }
+  #shoutbox .header {
+    background: linear-gradient(#d975c4 50%, #d361bc 55%);
+    color: white;
+    text-shadow: -1px 0px 4px #cd4db4;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: 0px 2px 11px -1px #af499c; }
+
+@keyframes headerdance {
+  from {
+    transform: rotate(0deg) scale(1); }
+  20% {
+    transform: rotate(0deg) scale(0.97); }
+  80% {
+    transform: rotate(0deg) scale(1); }
+  to {
+    transform: rotate(0deg) scale(1); } }
+  #shoutbox .header,
+  #shoutbox .shout {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; }
+  #shoutbox .shout {
+    padding: 4px 10px 4px;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#f4f4f4 50%, #e7e7e7 55%);
+    color: #3A3838;
+    text-shadow: -1px 0px 4px #dadada;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0px 2px 11px -1px #af499c; }
+    #shoutbox .shout .date,
+    #shoutbox .shout .user {
+      font-size: 70%;
+      opacity: .45;
+      font-weight: 400;
+      text-align: center; }
+    #shoutbox .shout .text {
+      margin: 7px 0; }
+  #shoutbox .input,
+  #shoutbox .btn-send {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: .1s all linear; }
+    #shoutbox .input:focus,
+    #shoutbox .btn-send:focus {
+      outline: none; }
+  #shoutbox .btn-send {
+    margin-top: 6px;
+    background: linear-gradient(#6c0a8a 50%, #590872 55%);
+    color: #FFFFFF;
+    text-shadow: -1px 0px 4px #46065a;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .15s all linear; }
+    #shoutbox .btn-send:hover:not(:disabled) {
+      background: linear-gradient(#590872 50%, #46065a 55%);
+      color: #FFFFFF;
+      text-shadow: -1px 0px 4px #340542;
+      font-size: 14px;
+      font-weight: 700; }
+    #shoutbox .btn-send:disabled {
+      background: #9a9898;
+      color: #d2d2d2;
+      text-shadow: none;
+      cursor: initial; }
